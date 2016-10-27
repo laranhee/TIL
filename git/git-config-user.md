@@ -1,6 +1,6 @@
 ## Git 이름, email 설정
 
-##### get
+### get
 
 ```
 git config [<file-option>] user.name
@@ -10,7 +10,7 @@ git config [<file-option>] user.name
 git config [<file-option>] user.email
 ```
 
-##### set
+### set
 
 ```
 git config [<file-option>] user.name 'username'
