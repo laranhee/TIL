@@ -1,6 +1,6 @@
 ##IntelliJ System.out.println() 단축키
 
-typing
+type
 
 ```java
 sout
