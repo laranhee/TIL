@@ -1,6 +1,6 @@
 ## Integration with the browser event loop
 
-![Angular concepts-runtime](/integration_with_the_browser_event_loop__concepts-runtime.png)
+![Angular concepts-runtime](./integration_with_the_browser_event_loop__concepts-runtime.png)
 
 다이어그램과 밑에 묘사된 예제는 Angular가 어떻게 브라우저 이벤트 루프와 상호작용하는지를 나타낸다.
 
