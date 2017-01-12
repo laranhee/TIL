@@ -10,4 +10,10 @@ Javascript 엔진은 전통적인 컴파일러의 많은 단계를 일반적으�
 
  **Note**: tokenizing과 lexing의 차이는 미묘하고 학문적이지만, 토큰을 _stateless_나 _stateful_로 식별하는 것에 중점을 둔다. 만약 tokenizer가 `a`를 별개의 토큰이나 다른 토큰의 부분인지를 알아 내기 위해 stateful한 분석 규칙을 적용한다면 이는 **lexing**이다.
 
-2. **Parsing**:
+2. **Parsing**: 토큰의 스트림(배열)을 가져와 프로그램의 문법 구조를 집합적으로 나타내는 중첩된 요소들의 트리로 만든다. 이 트리는 "AST" (**A**bstract **S**yntax **T**ree)라 불린다.
+
+ `var a = 2;`의 트리는 `VariableDeclaration` 최상위 노드, 값이 `a`인 `Identifier` 자식 노드, 값이 `2`인 `NumericLiteral` 자식을 가지고 있는 `AssignmentExpression` 자식 노드로 된다.
+
+3. **Code-Generation**: AST를 가져와 실행 가능한 코드로 바꾸는 과정. 언어, 타겟 플랫폼 등에 따라 크게 다르다.
+
+ **NOTE**: 
