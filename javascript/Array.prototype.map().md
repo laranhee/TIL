@@ -6,7 +6,7 @@
 var a = [1, 2, 3];
 
 var b = a.map(function (x) {
-  return a * 2;
+  return x * 2;
 });
 // b = [2, 4, 6]
 ```
