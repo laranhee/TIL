@@ -21,3 +21,7 @@
 #### main.ts
 
 JIT 컴파일러로 어플리케이션을 컴파일하고, 어플리케이션을 브라우저에서 실행하기 위해 메인 모듈(AppModule)을 부트스트랩한다. JIT 외 AOT(로드타임 감소 및 성능 향상)도 가능.
+
+#### Reference
+
+https://angular.io/docs/ts/latest/guide/setup.html
