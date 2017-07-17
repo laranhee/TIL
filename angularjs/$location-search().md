@@ -30,3 +30,6 @@ $location.search('foo', 'A');
 $location.search('foo', null);
 // $location.search() => {bar: 'b'}
 ```
+
+#### Reference
+https://docs.angularjs.org/api/ng/service/$location#search
