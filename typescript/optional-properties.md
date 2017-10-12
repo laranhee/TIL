@@ -10,9 +10,9 @@ interface Member {
 ```
 
 ```ts
-const member: Member = {name: 'Odd'}; // OK
-const member: Member = {name: 'Odd', age: 1}; // OK
-const member: Member = {name: 'Odd', phone: 11111}; // compile error
+const member1: Member = {name: 'Odd'}; // OK
+const member2: Member = {name: 'Odd', age: 1}; // OK
+const member3: Member = {name: 'Odd', phone: 11111}; // compile error
 ```
 
 #### Reference
