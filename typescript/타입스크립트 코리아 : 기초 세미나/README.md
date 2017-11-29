@@ -118,6 +118,7 @@ Any
 Never
 - 리턴에 주로 사용
 - 아래 3가지 정도의 경우가 대부분
+
 ```ts
 // function returning never must have unreachable end point
 function error(message: string): never {
@@ -151,3 +152,22 @@ Enum
 
 Symbol
 - ECMAScript 2015의 Symbol
+
+### 6. var, let, const
+
+let 과 const 의 타입 추론
+
+```ts
+let a: string = '에이';
+let b = '비이';
+
+const c: string = '씨이';
+const d = '디이';
+
+/*
+1. a는 명시적으로 지정된 타입인 string
+2. b는 타입추론에 의한 타입인 string
+3. c는 명시적으로 지정된 타입인 String
+4. d는 타입추론에 의한 타입인 리터럴타입 '디이'
+*/
+```
