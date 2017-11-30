@@ -171,3 +171,35 @@ const d = '디이';
 4. d는 타입추론에 의한 타입인 리터럴타입 '디이'
 */
 ```
+
+### 7. Type assertions, Type alias
+
+Type assertion
+- 형변환과는 다르다.
+- `타입이 이것이다`라고 컴파일러에게 알려주는 것 뿐. 런타임에 영향 x
+- 문법
+ - `변수 as 강제할타입`
+ - `<강제할타입>변수`
+
+Type alias
+- 타입 별칭
+- 인터페이스랑 비슷해보임
+- 주로 Union Type, Tuple에 쓰임
+
+Interface와의 차이점
+```ts
+type Alias = { num: number }
+
+inferface Interface {
+  num: number;
+}
+
+declare function aliased(arg: Alias): Alias;
+declare function interfaced(arg: Interface): Interface;
+/*
+1. type alias 는 object literal type으로
+2. interface 는 interface로
+*/
+```
+
+### 8. Interface
