@@ -15,7 +15,11 @@ var p = new Person(); // p.age > 0
 
 /* */
 
+<<<<<<< HEAD
 var p = Person(); // 이 경우 age는 window에 생성되고 증가한다. Person()의 this는 window가 되니까.
+=======
+var p = Person(); // 이 경우 age는 window에 생성된다. Person()의 this는 window가 되니까.
+>>>>>>> 671d5f8cdddca12258fbca790a60b8e78d529cca
 ```
 
 #### http://es6katas.org/
