@@ -1,3 +1,23 @@
+#### MDN
+
+화살표 함수는 자신만의 this를 생성하지 않습니다. this는 감싸고 있는 컨텍스트(스코프)로 부터 원래의 의미를 갖습니다. 그래서 다음 코드는 기대한대로 작동합니다.
+
+```js
+function Person(){
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++; // |this| 는 정확히 person 객체를 참조
+  }, 1000);
+}
+
+var p = new Person(); // p.age > 0
+
+/* */
+
+var p = Person(); // 이 경우 age는 window에 생성된다.
+```
+
 #### http://es6katas.org/
 ```js
 // 5: arrow functions - basics
