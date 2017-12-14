@@ -150,7 +150,7 @@ describe('inside a class you can use the `static` keyword', () => {
 
       assert.equal(UnitTest.testType, 'unit');
     });
-    
+
     it('even a static getter name can be dynamic/computed at runtime', () => {
       const type = 'test' + 'Type';
       class IntegrationTest {
@@ -160,6 +160,113 @@ describe('inside a class you can use the `static` keyword', () => {
       assert.ok('testType' in IntegrationTest);
       assert.equal(IntegrationTest.testType, 'integration');
     });
+  });
+
+});
+```
+
+```js
+// 25: class - extends
+// To do: make all tests pass, leave the assert lines unchanged!
+
+describe('classes can inherit from another', () => {
+
+  describe('the default super class is Object', () => {
+
+    it('class A is an instance of Object', () => {
+      class A {}
+
+      assert.equal(new A() instanceof Object, true);
+    });
+
+    it('B extends A, B is also instance of Object', () => {
+      class A {}
+      class B extends A {}
+
+      assert.equal(new B() instanceof A, true);
+      assert.equal(new B() instanceof Object, true);
+    });
+
+    it('class can extend `null`, not an instance of Object', () => {
+      class NullClass extends null {
+        constructor() {
+          return Object.create(NullClass.prototype);
+        }
+      }
+
+      let nullInstance = new NullClass();
+      assert.equal(nullInstance instanceof Object, false);
+    });
+
+  });
+
+  describe('instance of', () => {
+    it('when B inherits from A, `new B()` is also an instance of A', () => {
+      class A {}
+      class B extends A {}
+
+      assert.equal(new B() instanceof A, true);
+    });
+
+    it('extend over multiple levels', () => {
+      class A {}
+      class B extends A {}
+      class C extends B {}
+
+      let instance = new C();
+      assert.equal(instance instanceof A, true);
+    });
+  });
+});
+```
+
+```js
+// 26:
+```
+
+```js
+// 27: class - super inside a method
+// To do: make all tests pass, leave the assert lines unchanged!
+
+describe('inside a class use `super` to access parent methods', () => {
+
+  it('use of `super` without `extends` fails (already when transpiling)', () => {
+    class A {hasSuper() { return false; }}
+
+    assert.equal(new A().hasSuper(), false);
+  });
+
+  it('`super` with `extends` calls the method of the given name of the parent class', () => {
+    class A {hasSuper() { return true; }}
+    class B extends A {hasSuper() { return super.hasSuper(); }}
+
+    assert.equal(new B().hasSuper(), true);
+  });
+
+  it('when overridden a method does NOT automatically call its super method', () => {
+    class A {hasSuper() { return true; }}
+    class B extends A {hasSuper() {}}
+
+    assert.equal(new B().hasSuper(), void 0);
+  });
+
+  it('`super` works across any number of levels of inheritance', () => {
+    class A {iAmSuper() { return this.youAreSuper; }}
+    class B extends A {constructor() { super(); this.youAreSuper = true; } }
+    class C extends B {
+      iAmSuper() {
+        return super.iAmSuper();
+      }
+    }
+
+    assert.equal(new C().iAmSuper(), true);
+  });
+
+  it('accessing an undefined member of the parent class returns `undefined`', () => {
+    class A {}
+    class B extends A {getMethod() { return super.a; }}
+
+    assert.equal(new B().getMethod(), void 0);
   });
 
 });
