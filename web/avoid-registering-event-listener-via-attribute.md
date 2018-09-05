@@ -1,4 +1,4 @@
-### html attribute를 통한 이벤트 리스너 등록
+### html attribute를 통한 이벤트 리스너 등록 피하기
 
 ```html
 <button onclick="alert('Hello world!')">
