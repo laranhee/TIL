@@ -29,8 +29,11 @@ rm -rf fonts
 
 #### 적용 결과
 
-- iTerm2
+- iTerm2 (color scheme 적용 필요)
 
+scheme setting
+![](./iterm2-color-scheme.png)
+result
 ![](./oh-my-zsh-01.png)
 
 - VSCode
